@@ -16,8 +16,8 @@ rr_document() {
 
 rr_test() {
   shift
-  if [ $# -eq 0 ]; then; Rscript -e "library(devtools); test()";
-  else; Rscript -e "library(devtools); test($1)"
+  if [ $# -eq 0 ]; then; Rscript -e "library(methods); library(devtools); test()";
+  else; Rscript -e "library(methods); library(devtools); test($1)"
   fi
 }
 
