@@ -1,3 +1,5 @@
+alias 'rn'='R --no-init-file'
+
 rr() {
   if [ $# -eq 0 ]; then; R
   elif [ $1 = "document" ]; then rr_document $@
