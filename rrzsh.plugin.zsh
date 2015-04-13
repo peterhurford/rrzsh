@@ -5,6 +5,7 @@ rr() {
   elif [ $1 = "document" ]; then rr_document $@
   elif [ $1 = "test" ]; then rr_test $@
   elif [ $1 = "send" ]; then rr_send $@
+  elif [ $1 = "install"]; then rr_install $@
   else; Rscript -e $@
   fi
 }
@@ -20,6 +21,13 @@ rr_test() {
   shift
   if [ $# -eq 0 ]; then; Rscript -e "library(methods); library(devtools); test()";
   else; Rscript -e "library(methods); library(devtools); test($1)"
+  fi
+}
+
+rr_install() {
+  shift
+  if [ $# -eq 0 ]; then; Rscript -e "library(methods); library(devtools); install()";
+  else; Rscript -e "library(methods); library(devtools); test($1);"
   fi
 }
 
