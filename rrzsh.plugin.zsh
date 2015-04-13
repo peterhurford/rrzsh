@@ -27,7 +27,7 @@ rr_test() {
 rr_install() {
   shift
   if [ $# -eq 0 ]; then; Rscript -e "library(methods); library(devtools); install()";
-  else; Rscript -e "library(methods); library(devtools); test($1);"
+  else; Rscript -e "library(methods); library(devtools); install($1);"
   fi
 }
 
