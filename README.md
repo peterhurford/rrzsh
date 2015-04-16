@@ -12,7 +12,7 @@ A plugin for R commands from your terminal.
 
 * `rr install` - installs a package.  `rr install <path/to/package>` installs that package (e.g., `rr install ~/dev/package`).
 
-* `rr install_github` - installs a package from github (e.g., `rr install peterhurford/batchman`).
+* `rr install_github` - installs a package from github (e.g., `rr install_github peterhurford/batchman`).
 
 * `rr send <commit message>` - Like [send.zsh](https://github.com/robertzk/send.zsh), but hacked to include R.  If your repo is not a package, it will do `git add .`, `git commit -a -m <commit message>` and `git push origin <the branch you are on>`.  If you are in an R package directory, before doing that, it will document your code and run your tests.
 
