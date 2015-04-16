@@ -6,7 +6,7 @@ rr() {
   elif [ $1 = "test" ]; then rr_test $@
   elif [ $1 = "send" ]; then rr_send $@
   elif [ $1 = "install"]; then rr_install $@
-  elif [ $1 = "install_github"]; then rr_install $@
+  elif [ $1 = "install_github"]; then rr_install_github $@
   else; Rscript -e $@
   fi
 }
@@ -32,7 +32,7 @@ rr_install() {
   fi
 }
 
-rr_github_install() {
+rr_install_github() {
   shift
   if [ $# -eq 0 ]; then; echo "You need to specify the repo."
   else; Rscript -e "library(methods); library(devtools); install_github($1);"
