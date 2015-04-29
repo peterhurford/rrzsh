@@ -4,7 +4,7 @@ A plugin for R commands from your terminal.
 
 * `rr` - opens your R console.
 
-* `rn` - opens your R console without sourcing your `~/.Rprofile`.  (equivalent to `R --no-init-file`)
+* `rv` - opens your R console without sourcing your `~/.Rprofile`.  (equivalent to `R --vanilla`)
 
 * `rr document` - documents the R package that you are in.  `rr document <path/to/package>` documents that package (e.g., `rr document ~/dev/package`).
 

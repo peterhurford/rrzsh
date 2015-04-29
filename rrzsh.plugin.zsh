@@ -1,4 +1,4 @@
-alias 'rn'='R --no-init-file'
+alias 'rv'='R --vanilla'
 
 rr() {
   if [ $# -eq 0 ]; then; R
