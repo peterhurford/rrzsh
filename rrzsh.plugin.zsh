@@ -1,4 +1,5 @@
 alias 'rv'='R --vanilla'
+alias 'rn'='R --vanilla'
 
 rr() {
   if [ $# -eq 0 ]; then; R
@@ -6,7 +7,6 @@ rr() {
   elif [ $1 = "test" ]; then rr_test $@
   elif [ $1 = "send" ]; then rr_send $@
   elif [ $1 = "install" ]; then rr_install $@
-  elif [ $1 = "install_github" ]; then rr_install_github $@
   else; Rscript -e $@
   fi
 }
@@ -27,15 +27,13 @@ rr_test() {
 
 rr_install() {
   shift
-  if [ $# -eq 0 ]; then; Rscript -e "library(methods); library(devtools); install()";
-  else; Rscript -e "library(methods); library(devtools); install($1);"
-  fi
-}
-
-rr_install_github() {
-  shift
-  if [ $# -eq 0 ]; then echo "You need to specify the repo.";
-  else; Rscript -e "library(methods); library(devtools); install_github('$1');"
+  if [ $# -eq 0 ]; then echo "You need to specify the package to install.";
+  elif grep -q "/" <<< "$1"; then
+    echo "Installing $1 from GitHub"
+    Rscript -e "library(methods); library(devtools); install_github('$1');"
+  else
+    echo "Installing $1 from CRAN..."
+    Rscript -e "library(methods); install.packages('$1');"
   fi
 }
 
