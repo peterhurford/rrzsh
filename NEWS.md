@@ -1,3 +1,7 @@
+# Version 1.3.1
+
+* `rr send` no longer runs tests.  Instead, just documentation + commiting.
+
 # Version 1.3
 
 * `rr release` will automatically read the package version from the `DESCRIPTION` file and release.
