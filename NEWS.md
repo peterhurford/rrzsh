@@ -1,3 +1,7 @@
+# Version 1.3
+
+* `rr release` will automatically read the package version from the `DESCRIPTION` file and release.
+
 # Version 1.2
 
 * `rr create` will create a new package scaffold.
