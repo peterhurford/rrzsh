@@ -7,6 +7,7 @@ rr() {
   elif [ $1 = "test" ]; then rr_test $@
   elif [ $1 = "send" ]; then rr_send $@
   elif [ $1 = "install" ]; then rr_install $@
+  elif [ $1 = "create" ]; then rr_create $@
   else; Rscript -e $@
   fi
 }
@@ -34,6 +35,13 @@ rr_install() {
   else
     echo "Installing $1 from CRAN..."
     Rscript -e "library(methods); install.packages('$1');"
+  fi
+}
+
+rr_create() {
+  shift
+  if [ $# -eq 0 ]; then echo "You need to specify the name of the package to create.";
+  else Rscript -e "library(methods); library(devtools); create('$1');"; cd $1
   fi
 }
 
