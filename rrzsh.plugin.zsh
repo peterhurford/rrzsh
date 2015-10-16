@@ -73,8 +73,6 @@ rr_send() {
   shift
   print "Documenting..."
   rr_document 'shift'
-  print "Testing..."
-  rr_test 'shift'
   print "Committing..."
   git add "$(git rev-parse --show-toplevel)"
   if [ $# -eq 1 ]; then
