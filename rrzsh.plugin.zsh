@@ -8,6 +8,7 @@ rr() {
   elif [ $1 = "send" ]; then rr_send $@
   elif [ $1 = "install" ]; then rr_install $@
   elif [ $1 = "create" ]; then rr_create $@
+  elif [ $1 = "release" ]; then rr_release $@
   else; Rscript -e $@
   fi
 }
@@ -43,6 +44,13 @@ rr_create() {
   if [ $# -eq 0 ]; then echo "You need to specify the name of the package to create.";
   else Rscript -e "library(methods); library(devtools); create('$1');"; cd $1
   fi
+}
+
+rr_release() {
+  git checkout master
+  git pull origin master
+  local version=`head DESCRIPTION | grep "Version" | awk '{print $2}'`
+  git tag $version && git push origin $version
 }
 
 rr_pull_or_push() {
