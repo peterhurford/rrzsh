@@ -4,7 +4,7 @@ alias 'rn'='R --vanilla'
 rr() {
   if [ $# -eq 0 ]; then; R
   elif [ $1 = "document" ]; then rr_document $@
-  elif [ $1 = "rocco" ]; then rr rocco
+  elif [ $1 = "rocco" ]; then rr_rocco $@
   elif [ $1 = "test" ]; then rr_test $@
   elif [ $1 = "send" ]; then rr_send $@
   elif [ $1 = "install" ]; then rr_install $@
