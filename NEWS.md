@@ -1,3 +1,7 @@
+# Version 1.4
+
+* Introduces `rr rocco` to compile your Rocco documentation.
+
 # Version 1.3.1
 
 * `rr send` no longer runs tests.  Instead, just documentation + commiting.
