@@ -4,6 +4,7 @@ alias 'rn'='R --vanilla'
 rr() {
   if [ $# -eq 0 ]; then; R
   elif [ $1 = "document" ]; then rr_document $@
+  elif [ $1 = "rocco" ]; then rr rocco
   elif [ $1 = "test" ]; then rr_test $@
   elif [ $1 = "send" ]; then rr_send $@
   elif [ $1 = "install" ]; then rr_install $@
@@ -18,6 +19,10 @@ rr_document() {
   if [ $# -eq 0 ]; then; Rscript -e "devtools::document()";
   else; Rscript -e "devtools::document($1)"
   fi
+}
+
+rr_rocco() {
+  Rscript -e "library(whisker); library(markdown); library(rocco); rocco(, gh_pages = TRUE)"
 }
 
 rr_test() {
