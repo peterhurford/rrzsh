@@ -8,6 +8,8 @@ A plugin for R commands from your terminal.
 
 * `rr document` - documents the R package that you are in.  `rr document <path/to/package>` documents that package (e.g., `rr document ~/dev/package`).
 
+* `rr rocco` - compiles your [rocco documentation](https://github.com/robertzk/rocco).
+
 * `rr test` - runs the tests for the package you are in.  `rr test <path/to/package>` tests that package (e.g., `rr test ~/dev/package`).
 
 * `rr install` - installs a package.  `rr install <package name>` installs that package from CRAN.  `rr install <github_username>/<github_repo>` installs that package via `devtools::install_gihtub` (e.g., `rr install devtools`, `rr install peterhurford/batchman`).
