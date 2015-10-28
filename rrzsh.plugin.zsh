@@ -28,7 +28,7 @@ rr_rocco() {
 rr_test() {
   shift
   if [ $# -eq 0 ]; then; Rscript -e "library(methods); library(devtools); test()";
-  else; Rscript -e "library(methods); library(devtools); test($1)"
+  else; Rscript -e "library(methods); library(devtools); test('$1')"
   fi
 }
 
