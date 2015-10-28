@@ -1,3 +1,7 @@
+# Version 1.5
+* Adds an additional argument to rr test to test an individual file.
+* Fix `rr test <arg>` to work to test a directory.
+
 # Version 1.4
 
 * Introduces `rr rocco` to compile your Rocco documentation.

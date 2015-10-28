@@ -10,7 +10,7 @@ A plugin for R commands from your terminal.
 
 * `rr rocco` - compiles your [rocco documentation](https://github.com/robertzk/rocco).
 
-* `rr test` - runs the tests for the package you are in.  `rr test <path/to/package>` tests that package (e.g., `rr test ~/dev/package`).
+* `rr test` - runs the tests for the package you are in.  `rr test <path/to/package>` tests that package (e.g., `rr test ~/dev/package`).  `rr test <path/to/package> <file>` will test a file within that package (e.g., `rr test . file`).
 
 * `rr install` - installs a package.  `rr install <package name>` installs that package from CRAN.  `rr install <github_username>/<github_repo>` installs that package via `devtools::install_gihtub` (e.g., `rr install devtools`, `rr install peterhurford/batchman`).
 
