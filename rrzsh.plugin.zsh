@@ -10,6 +10,7 @@ rr() {
   elif [ $1 = "install" ]; then rr_install $@
   elif [ $1 = "create" ]; then rr_create $@
   elif [ $1 = "release" ]; then rr_release $@
+  elif [ $1 = "check" ]; then rr_check $@
   else; Rscript -e $@
   fi
 }
@@ -90,4 +91,11 @@ rr_send() {
   rr_pull
   print "Pushing..."
   rr_push
+}
+
+rr_check() {
+  shift
+  if [ $# -eq 0 ]; then Rscript -e "library(methods); library(devtools); check()";
+  else Rscript -e "library(methods); library(devtools); check('$1')";
+  fi
 }
