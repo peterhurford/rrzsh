@@ -1,3 +1,6 @@
+# Version 1.6
+* Adds `rr check` to run R CMD CHECK via devtools.
+
 # Version 1.5
 * Adds an additional argument to rr test to test an individual file.
 * Fix `rr test <arg>` to work to test a directory.

@@ -19,6 +19,8 @@ A plugin for R commands from your terminal.
 * `rr create <packagename>` - Creates a new R package scaffold, using `devtools::create`.  But you may prefer [using a Yeoman generator](https://github.com/kirillseva/generator-newpackage) which includes Travis CI and Covr.
 
 * `rr release` - Automatically reads the package version from the `DESCRIPTION` file and releases at that version on git (`git tag` + `git push`).
+ 
+* `rr check` - Runs `R CMD CHECK` (via `devtools::check`).
 
 * `rr <command>` - runs that command in R.  `rr "mean(2, 4, 5)"` outputs 2.  One cool tip is to use this to access man pages, e.g., `rr "?mean"`.
 
