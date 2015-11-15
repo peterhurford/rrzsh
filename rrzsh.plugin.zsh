@@ -17,13 +17,13 @@ rr() {
 
 rr_document() {
   shift
-  if [ $# -eq 0 ]; then; Rscript -e "devtools::document()";
+  if [ $# -eq 0 ]; then; Rscript -e "library(methods); devtools::document()";
   else; Rscript -e "devtools::document($1)"
   fi
 }
 
 rr_rocco() {
-  Rscript -e "library(whisker); library(markdown); library(rocco); rocco(, gh_pages = TRUE)"
+  Rscript -e "library(whisker); library(markdown); library(rocco); library(methods); library(devtools); rocco(, gh_pages = TRUE)"
 }
 
 rr_test() {
