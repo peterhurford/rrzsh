@@ -1,3 +1,7 @@
+# Version 1.6.1
+
+* Use `library(methods)` for rocco and roxygen documentation to handle S3 classes.
+
 # Version 1.6
 * Adds `rr check` to run R CMD CHECK via devtools.
 
