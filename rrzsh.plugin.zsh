@@ -23,7 +23,7 @@ rr_document() {
 }
 
 rr_rocco() {
-  Rscript -e "library(whisker); library(markdown); library(rocco); rocco(, gh_pages = TRUE)"
+  Rscript -e "library(whisker); library(markdown); library(rocco); library(methods); library(devtools); rocco(, gh_pages = TRUE)"
 }
 
 rr_test() {
