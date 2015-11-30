@@ -26,8 +26,8 @@ rr_rocco() {
   shift
   if [ $# -eq 0 ]; then; local should_gh_page="TRUE"
   else; local should_gh_page="FALSE"
-  Rscript -e "library(whisker); library(markdown); library(rocco); library(methods); library(devtools); rocco(, gh_pages = $should_gh_page)"
   fi
+  Rscript -e "library(whisker); library(markdown); library(rocco); library(methods); library(devtools); rocco(, gh_pages = $should_gh_page)"
 }
 
 rr_test() {
