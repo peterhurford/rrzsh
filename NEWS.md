@@ -1,3 +1,7 @@
+# Version 1.7
+
+* `rr rocco no-pages` will run `rr rocco` without attempting to push to `gh_pages`.
+
 # Version 1.6.1
 
 * Use `library(methods)` for rocco and roxygen documentation to handle S3 classes.
