@@ -23,7 +23,11 @@ rr_document() {
 }
 
 rr_rocco() {
-  Rscript -e "library(whisker); library(markdown); library(rocco); library(methods); library(devtools); rocco(, gh_pages = TRUE)"
+  shift
+  if [ $# -eq 0 ]; then; local should_gh_page="TRUE"
+  else; local should_gh_page="FALSE"
+  Rscript -e "library(whisker); library(markdown); library(rocco); library(methods); library(devtools); rocco(, gh_pages = $should_gh_page)"
+  fi
 }
 
 rr_test() {
