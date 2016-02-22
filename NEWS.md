@@ -1,3 +1,7 @@
+# Version 1.7.1
+
+* A CRAN mirror is set for `rr install`.
+
 # Version 1.7
 
 * `rr rocco no-pages` will run `rr rocco` without attempting to push to `gh_pages`.

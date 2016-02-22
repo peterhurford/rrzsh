@@ -46,7 +46,7 @@ rr_install() {
     Rscript -e "library(methods); library(devtools); install_github('$1');"
   else
     echo "Installing $1 from CRAN..."
-    Rscript -e "library(methods); install.packages('$1');"
+    Rscript -e "library(methods); options(repos=structure(c(CRAN='http://cran.cnr.berkeley.edu/'))); install.packages('$1');"
   fi
 }
 
