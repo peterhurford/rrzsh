@@ -8,6 +8,7 @@ rr() {
   elif [ $1 = "test" ]; then rr_test $@
   elif [ $1 = "send" ]; then rr_send $@
   elif [ $1 = "install" ]; then rr_install $@
+  elif [ $1 = "uninstall" ]; then rr_uninstall $@
   elif [ $1 = "create" ]; then rr_create $@
   elif [ $1 = "release" ]; then rr_release $@
   elif [ $1 = "check" ]; then rr_check $@
@@ -47,6 +48,15 @@ rr_install() {
   else
     echo "Installing $1 from CRAN..."
     Rscript -e "library(methods); options(repos=structure(c(CRAN='http://cran.cnr.berkeley.edu/'))); install.packages('$1');"
+  fi
+}
+
+rr_uninstall() {
+  shift
+  if [ $# -eq 0 ]; then echo "You need to specify the package to install.";
+  else
+    echo "Removing $1..."
+    Rscript -e "remove.packages('$1', .libPaths())"
   fi
 }
 
