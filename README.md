@@ -14,6 +14,8 @@ A plugin for R commands from your terminal.
 
 * `rr install` - installs a package.  `rr install <package name>` installs that package from CRAN.  `rr install <github_username>/<github_repo>` installs that package via `devtools::install_gihtub` (e.g., `rr install devtools`, `rr install peterhurford/batchman`).
 
+* `rr uninstall` - uninstalls a package.  `rr uninstall <package name>` uninstalls that package from every folder in your `.libPaths()` (e.g., `rr uninstall devtools`).
+
 * `rr send <commit message>` - Like [send.zsh](https://github.com/robertzk/send.zsh), but hacked to include R.  If your repo is not a package, it will do `git add .`, `git commit -a -m <commit message>` and `git push origin <the branch you are on>`.  If you are in an R package directory, before doing that, it will document your code using Roxygen.
 
 * `rr create <packagename>` - Creates a new R package scaffold, using `devtools::create`.  But you may prefer [using a Yeoman generator](https://github.com/kirillseva/generator-newpackage) which includes Travis CI and Covr.

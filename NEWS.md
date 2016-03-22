@@ -1,3 +1,7 @@
+# Version 1.8
+
+* `rr uninstall` will uninstall a package.
+
 # Version 1.7.1
 
 * A CRAN mirror is set for `rr install`.
