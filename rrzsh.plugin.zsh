@@ -54,7 +54,10 @@ rr_install() {
 rr_uninstall() {
   shift
   if [ $# -eq 0 ]; then echo "You need to specify the package to install.";
-  Rscript -e "remove.packages('$1', '.libPaths()')"
+  else
+    echo "Removing $1..."
+    Rscript -e "remove.packages('$1', .libPaths())"
+  fi
 }
 
 rr_create() {
