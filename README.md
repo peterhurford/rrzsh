@@ -1,4 +1,4 @@
-## rrzsh - A pirate's favorite plugin.
+## rrzsh - A pirate's favorite plugin. ![](https://img.shields.io/github/tag/peterhurford/rrzsh.svg)
 
 A plugin for R commands from your terminal.
 
