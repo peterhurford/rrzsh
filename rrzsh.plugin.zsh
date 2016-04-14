@@ -42,6 +42,12 @@ rr_test() {
 rr_install() {
   shift
   if [ $# -eq 0 ]; then echo "You need to specify the package to install.";
+  elif [ $1 == "-l" ]; then
+    if [ $# -eq 1 ]; then echo "You need to specify the local package to install.";
+    else
+      echo "Installing $2 from local"
+      Rscript -e "library(methods); library(devtools); install('$2');"
+    fi
   elif grep -q "/" <<< "$1"; then
     echo "Installing $1 from GitHub"
     Rscript -e "library(methods); library(devtools); install_github('$1');"
