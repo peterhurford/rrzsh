@@ -1,3 +1,7 @@
+# Version 1.9
+
+* `rr install` now takes a flag `-l` to install from a local directory.
+
 # Version 1.8
 
 * `rr uninstall` will uninstall a package.

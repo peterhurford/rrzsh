@@ -12,7 +12,7 @@ A plugin for R commands from your terminal.
 
 * `rr test` - runs the tests for the package you are in.  `rr test <path/to/package>` tests that package (e.g., `rr test ~/dev/package`).  `rr test <path/to/package> <file>` will test a file within that package (e.g., `rr test . file`).
 
-* `rr install` - installs a package.  `rr install <package name>` installs that package from CRAN.  `rr install <github_username>/<github_repo>` installs that package via `devtools::install_gihtub` (e.g., `rr install devtools`, `rr install peterhurford/batchman`).
+* `rr install` - installs a package.  `rr install <package name>` installs that package from CRAN.  `rr install -l <path to package>` installs from your local directory.  `rr install <github_username>/<github_repo>` installs that package via `devtools::install_gihtub` (e.g., `rr install devtools`, `rr install -l ~/dev/checkr`, `rr install peterhurford/batchman`).
 
 * `rr uninstall` - uninstalls a package.  `rr uninstall <package name>` uninstalls that package from every folder in your `.libPaths()` (e.g., `rr uninstall devtools`).
 
