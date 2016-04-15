@@ -1,3 +1,7 @@
+# Version 1.10
+
+* `rr create` will also create the tests directory using testthat (through `devtools::use_testthat`).
+
 # Version 1.9
 
 * `rr install` now takes a flag `-l` to install from a local directory.

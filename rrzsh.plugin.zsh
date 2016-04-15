@@ -69,7 +69,8 @@ rr_uninstall() {
 rr_create() {
   shift
   if [ $# -eq 0 ]; then echo "You need to specify the name of the package to create.";
-  else Rscript -e "library(methods); library(devtools); create('$1');"; cd $1
+  else Rscript -e "library(methods); library(devtools); create('$1'); use_testthat('$1')"
+  cd $1;
   fi
 }
 
