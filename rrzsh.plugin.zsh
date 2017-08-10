@@ -4,6 +4,7 @@ alias 'rn'='R --vanilla'
 rr() {
   if [ $# -eq 0 ]; then; R
   elif [ $1 = "document" ]; then rr_document $@
+  elif [ $1 = "vignettes" ]; then rr_vignettes $@
   elif [ $1 = "rocco" ]; then rr_rocco $@
   elif [ $1 = "test" ]; then rr_test $@
   elif [ $1 = "send" ]; then rr_send $@
@@ -21,6 +22,14 @@ rr_document() {
   if [ $# -eq 0 ]; then; Rscript -e "library(methods); devtools::document()";
   else; Rscript -e "devtools::document($1)"
   fi
+}
+
+rr_vignettes() {
+  shift
+  if [ $# -eq 0 ]; then; local pkg="."
+  else; local pkg="$1"
+  fi
+  Rscript -e "library(methods); devtools::build_vignettes(pkg = '$pkg', dependencies = 'VignetteBuilder')";
 }
 
 rr_rocco() {
