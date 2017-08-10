@@ -1,3 +1,7 @@
+# Version 1.11
+
+* Adds `rr vignettes` to make vignettes.
+
 # Version 1.10
 
 * `rr create` will also create the tests directory using testthat (through `devtools::use_testthat`).
