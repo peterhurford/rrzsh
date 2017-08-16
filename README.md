@@ -8,6 +8,10 @@ A plugin for R commands from your terminal.
 
 * `rr document` - documents the R package that you are in.  `rr document <path/to/package>` documents that package (e.g., `rr document ~/dev/package`).
 
+* `rr knit <file>` to knit a file using [knitr](https://yihui.name/knitr/).
+
+* `rr vignettes` to build vignettes.
+
 * `rr rocco` - compiles your [rocco documentation](https://github.com/robertzk/rocco).  `rr rocco no-pages` will run `rr rocco` without attempting to push to `gh_pages`.
 
 * `rr test` - runs the tests for the package you are in.  `rr test <path/to/package>` tests that package (e.g., `rr test ~/dev/package`).  `rr test <path/to/package> <file>` will test a file within that package (e.g., `rr test . file`).
@@ -22,7 +26,7 @@ A plugin for R commands from your terminal.
 
 * `rr release` - Automatically reads the package version from the `DESCRIPTION` file and releases at that version on git (`git tag` + `git push`).
  
-* `rr check` - Runs `R CMD CHECK` (via `devtools::check`).
+* `rr check` - Runs `R CMD CHECK` (via `devtools::check`). Use `rr check --strict` to run `R CMD CHECK` via the command line with more strict settings that are intended for CRAN submission preparation. Run `rr check --strict --keep` to keep the resulting check logs and build file.
 
 * `rr <command>` - runs that command in R.  `rr "mean(2, 4, 5)"` outputs 2.  One cool tip is to use this to access man pages, e.g., `rr "?mean"`.
 

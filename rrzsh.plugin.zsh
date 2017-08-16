@@ -132,9 +132,19 @@ rr_send() {
   rr_push
 }
 
+__rr_internal_cleanup_after_check() {
+  rm -rf *.Rcheck; rm -rf ..Rcheck; rm -rf *.tar.gz
+}
 rr_check() {
   shift
   if [ $# -eq 0 ]; then Rscript -e "library(methods); library(devtools); check()";
+  elif [ $1 == "--strict" ]; then
+    rr_document 'shift'
+    __rr_internal_cleanup_after_check
+    R CMD BUILD .; R CMD CHECK *.tar.gz --as-cran --timings --run-donttest
+    if [ $# -eq 1 ] || [ $2 != "--keep" ]; then
+      __rr_internal_cleanup_after_check
+    fi
   else Rscript -e "library(methods); library(devtools); check('$1')";
   fi
 }
