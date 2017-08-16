@@ -1,3 +1,7 @@
+# Version 1.13
+
+* Adds `rr check --strict` as a more thorough run of `R CMD CHECK` to prepare a package for CRAN submission.
+
 # Version 1.12
 
 * Adds `rr knit <target>` to use `knitr` to knit a file.
