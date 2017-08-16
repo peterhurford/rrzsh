@@ -1,3 +1,8 @@
+# Version 1.12
+
+* Adds `rr knit <target>` to use `knitr` to knit a file.
+* Extends `rr install` to assume that `rr install -l` with no arguments refers to installing the package at the current working directory.
+
 # Version 1.11
 
 * Adds `rr vignettes` to make vignettes.
