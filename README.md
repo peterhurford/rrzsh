@@ -1,4 +1,3 @@
-## rrzsh - A pirate's favorite plugin. <a href="https://github.com/peterhurford/rrzsh/tags"><img src="https://img.shields.io/github/tag/peterhurford/rrzsh.svg"></a>
 
 A plugin for R commands from your terminal.
 
@@ -12,7 +11,7 @@ A plugin for R commands from your terminal.
 
 * `rr vignettes` to build vignettes.
 
-* `rr rocco` - compiles your [rocco documentation](https://github.com/robertzk/rocco).  `rr rocco no-pages` will run `rr rocco` without attempting to push to `gh_pages`.
+* `rr rocco` - compiles your [rocco documentation](https://github.com/robertzk/rocco).  `rr rocco --no-pages` will run `rr rocco` without attempting to push to `gh_pages`.
 
 * `rr test` - runs the tests for the package you are in.  `rr test <path/to/package>` tests that package (e.g., `rr test ~/dev/package`).  `rr test <path/to/package> <file>` will test a file within that package (e.g., `rr test . file`).
 
