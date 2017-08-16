@@ -6,6 +6,7 @@ rr() {
   elif [ $1 = "document" ]; then rr_document $@
   elif [ $1 = "vignettes" ]; then rr_vignettes $@
   elif [ $1 = "rocco" ]; then rr_rocco $@
+  elif [ $1 = "knit" ]; then rr_knit $@
   elif [ $1 = "test" ]; then rr_test $@
   elif [ $1 = "send" ]; then rr_send $@
   elif [ $1 = "install" ]; then rr_install $@
@@ -40,6 +41,14 @@ rr_rocco() {
   Rscript -e "library(whisker); library(markdown); library(rocco); library(methods); library(devtools); rocco(, gh_pages = $should_gh_page)"
 }
 
+rr_knit() {
+  shift
+  if [ $# -eq 0 ]; then; echo "Need a target to knit."
+  else; 
+    Rscript -e "library(methods); knitr::knit('$1')";
+  fi
+}
+
 rr_test() {
   shift
   if [ $# -eq 0 ]; then; Rscript -e "library(methods); library(devtools); test()";
@@ -52,11 +61,11 @@ rr_install() {
   shift
   if [ $# -eq 0 ]; then echo "You need to specify the package to install.";
   elif [ $1 == "-l" ]; then
-    if [ $# -eq 1 ]; then echo "You need to specify the local package to install.";
-    else
-      echo "Installing $2 from local"
-      Rscript -e "library(methods); library(devtools); install('$2');"
+    if [ $# -eq 1 ]; then local pkg=".";
+    else; local pkg="$2"
     fi
+    echo "Installing $pkg from local"
+    Rscript -e "library(methods); library(devtools); install('$pkg');"
   elif grep -q "/" <<< "$1"; then
     echo "Installing $1 from GitHub"
     Rscript -e "library(methods); library(devtools); install_github('$1');"
