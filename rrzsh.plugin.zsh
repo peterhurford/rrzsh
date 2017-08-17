@@ -15,6 +15,8 @@ rr() {
   elif [ $1 = "create" ]; then rr_create $@
   elif [ $1 = "release" ]; then rr_release $@
   elif [ $1 = "check" ]; then rr_check $@
+  elif [ $1 = "remove_trailing_spaces" ]; then rr_remove_trailing_spaces $@
+  elif [ $1 = "tabs_to_spaces" ]; then rr_tabs_to_spaces $@
   else; Rscript -e $@
   fi
 }
@@ -152,4 +154,12 @@ rr_check() {
     fi
   else Rscript -e "library(methods); library(devtools); check('$1')";
   fi
+}
+
+rr_remove_trailing_spaces() {
+  find . -type f -name "*.R" -exec sed -i '' -e 's/[[:space:]]*$//' {} \;
+}
+
+rr_tabs_to_spaces() {
+  find . -type f -name "*.R" -exec sed -i '' -e $'s/\t/  /g' {} \;
 }

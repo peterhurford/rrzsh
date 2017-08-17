@@ -1,3 +1,7 @@
+# Version 1.15
+
+* Adds `rr remove_trailing_spaces` and `rr tabs_to_spaces` for cleaning up R style guide violations.
+
 # Version 1.14
 
 * Adds `rr build` to build the package at the current directory into a compressed file suitable for installation or CRAN submission.

@@ -29,6 +29,10 @@ A plugin for R commands from your terminal.
  
 * `rr check` - Runs `R CMD CHECK` (via `devtools::check`). Use `rr check --strict` to run `R CMD CHECK` via the command line with more strict settings that are intended for CRAN submission preparation. Run `rr check --strict --keep` to keep the resulting check logs and build file.
 
+* `rr remove_trailing_spaces` will remove all trailing spaces from all `.R` files (you must run this from the package root and files must end in `.R`).
+
+* `rr tabs_to_spaces` will replace all tabs with two spaces in all `.R` files (you must run this from the package root and files must end in `.R`).
+
 * `rr <command>` - runs that command in R.  `rr "mean(2, 4, 5)"` outputs 2.  One cool tip is to use this to access man pages, e.g., `rr "?mean"`.
 
 
