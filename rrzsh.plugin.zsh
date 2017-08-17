@@ -17,7 +17,6 @@ rr() {
   elif [ $1 = "check" ]; then rr_check $@
   elif [ $1 = "remove_trailing_spaces" ]; then rr_remove_trailing_spaces $@
   elif [ $1 = "tabs_to_spaces" ]; then rr_tabs_to_spaces $@
-  elif [ $1 = "unspace_parens" ]; then rr_unspace_parens $@
   else; Rscript -e $@
   fi
 }
