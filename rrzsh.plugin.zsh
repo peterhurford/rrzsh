@@ -11,6 +11,7 @@ rr() {
   elif [ $1 = "send" ]; then rr_send $@
   elif [ $1 = "install" ]; then rr_install $@
   elif [ $1 = "uninstall" ]; then rr_uninstall $@
+  elif [ $1 = "build" ]; then rr_build $@
   elif [ $1 = "create" ]; then rr_create $@
   elif [ $1 = "release" ]; then rr_release $@
   elif [ $1 = "check" ]; then rr_check $@
@@ -82,6 +83,10 @@ rr_uninstall() {
     echo "Removing $1..."
     Rscript -e "remove.packages('$1', .libPaths())"
   fi
+}
+
+rr_build() {
+  R CMD BUILD .
 }
 
 rr_create() {

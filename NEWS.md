@@ -1,3 +1,7 @@
+# Version 1.14
+
+* Adds `rr build` to build the package at the current directory into a compressed file suitable for installation or CRAN submission.
+
 # Version 1.13
 
 * Adds `rr check --strict` as a more thorough run of `R CMD CHECK` to prepare a package for CRAN submission.
