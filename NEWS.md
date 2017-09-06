@@ -1,3 +1,8 @@
+# Version 1.16
+
+* Amends `rr install` to use a working CRAN mirror.
+* Amends `rr install` to also install Suggests dependencies (via `devtools::install_deps(dependencies = TRUE)`) during local installation.
+
 # Version 1.15
 
 * Adds `rr remove_trailing_spaces` and `rr tabs_to_spaces` for cleaning up R style guide violations.
