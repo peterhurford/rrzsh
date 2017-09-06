@@ -69,12 +69,14 @@ rr_install() {
     fi
     echo "Installing $pkg from local"
     Rscript -e "library(methods); library(devtools); install('$pkg');"
+    echo "Installing dependencies..."
+    Rscript -e "library(methods); library(devtools); install_deps('$pkg', dependencies = TRUE)"
   elif grep -q "/" <<< "$1"; then
     echo "Installing $1 from GitHub"
     Rscript -e "library(methods); library(devtools); install_github('$1');"
   else
     echo "Installing $1 from CRAN..."
-    Rscript -e "library(methods); options(repos=structure(c(CRAN='http://cran.cnr.berkeley.edu/'))); install.packages('$1');"
+    Rscript -e "library(methods); options(repos=structure(c(CRAN='http://cran.rstudio.com'))); install.packages('$1');"
   fi
 }
 
